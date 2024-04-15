@@ -1,6 +1,6 @@
 # Speaker diarisation service
 
-This repository contains a Speaker Diarisation Webservice powered by [pyannotate](https://github.com/pyannote/pyannote-audio).
+This repository contains a Speaker Diarisation Webservice powered by [pyannote](https://github.com/pyannote/pyannote-audio).
 and [CLAM](https://proycon.github.io/clam/). This webservice is developed at the Centre of Language and Speech Technology, Radboud University, Nijmegen.
 
 ## Installation
