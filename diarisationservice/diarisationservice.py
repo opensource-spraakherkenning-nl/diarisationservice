@@ -138,12 +138,13 @@ PROFILES = [
             multi=True #set unique=True if the user may only upload a file for this input template once. Set multi=True if you the user may upload multiple of such files
         ),
         #------------------------------------------------------------------------------------------------------------------------
-        OutputTemplate('RTTM',CTMFormat,'Speaker diarisation',
+        OutputTemplate('RTTM',RTTMFormat,'Speaker diarisation',
             SetMetaField('encoding','utf-8'),
             removeextension=".wav",
             extension='.rttm',
             multi=True
         ),
+    )
 ]
 
 # ======== PROJECTS: COMMAND ===========
