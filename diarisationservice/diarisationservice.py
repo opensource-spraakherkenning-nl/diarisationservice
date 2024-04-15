@@ -121,12 +121,6 @@ CUSTOM_FORMATS = [ RTTMFormat]
 #INTERFACEOPTIONS = "inputfromweb" #allow CLAM to download its input from a user-specified url
 INTERFACEOPTIONS = "disableliveinput"
 
-# ======== PROJECTS: PREINSTALLED DATA ===========
-
-#INPUTSOURCES = [
-#    InputSource(id='sampledocs',label='Sample texts',path=ROOT+'/inputsources/sampledata',defaultmetadata=PlainTextFormat(None, encoding='utf-8') ),
-#]
-
 # ======== PROJECTS: PROFILE DEFINITIONS ===========
 
 #Define your profiles here. This is required for the project paradigm, but can be set to an empty list if you only use the action paradigm.

@@ -9,7 +9,7 @@ import os
 import clam.common.data
 import clam.common.status
 
-from pyannotate.audio import Pipeline
+from pyannote.audio import Pipeline
 
 #When the wrapper is started, the current working directory corresponds to the project directory, input files are in input/ , output files should go in output/ .
 
@@ -39,12 +39,18 @@ clam.common.status.write(statusfile, "Initialising...")
 
 gpu = False
 kwargs = {}
-if 'minspeakers' in clamdata:
+try:
     kwargs['min_speakers'] = clamdata['minspeakers']
-if 'maxspeakers' in clamdata:
+except KeyError:
+    pass
+try:
     kwargs['max_speakers'] = clamdata['maxspeakers']
-if 'gpu' in clamdata:
+except KeyError:
+    pass
+try:
     gpu = clamdata['gpu']
+except KeyError:
+    pass
 
 clam.common.status.write(statusfile, "Loading model...")
 
@@ -61,9 +67,9 @@ for inputfile in clamdata.input:
 
     clam.common.status.write(statusfile, "Processing " + os.path.basename(inputfilepath),100) # status update
 
-    outputfilepath = os.path.join(outputdir, os.path.basename(inputfilepath)[-4:]) + ".rttm"
+    outputfilepath = os.path.join(outputdir, os.path.basename(inputfilepath)[:-4]) + ".rttm"
 
-    diarisation = pipeline(inputfile, **kwargs)
+    diarisation = pipeline(inputfilepath, **kwargs)
     with open(outputfilepath,"w") as f:
         diarisation.write_rttm(f)
 
