@@ -21,7 +21,7 @@ setup(
     license = "GPL-3.0-or-later",
     keywords = "clam webservice rest nlp computational_linguistics rest",
     url = "https://github.com/opensource-spraakherkenning-nl/diarisationservice",
-    packages=['asrservice'],
+    packages=['diarisationservice'],
     long_description=getreadme(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -38,7 +38,7 @@ setup(
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
-    package_data = {'asrservice':['*.wsgi','*.yml','*.sh'] },
+    package_data = {'diarisationservice':['*.wsgi','*.yml','*.sh'] },
     include_package_data=True,
     install_requires=['CLAM >= 3.2', 'pyannote.audio']
 )
